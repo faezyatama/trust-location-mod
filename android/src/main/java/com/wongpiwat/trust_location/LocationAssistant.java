@@ -491,7 +491,7 @@ public class LocationAssistant
         if (!googleApiClient.isConnected() || !permissionGranted || !locationRequested || !locationStatusOk)
             return;
         try {
-                LocationServices.getFusedLocationProviderClient(context).getLastLocation().addOnSuccessListener(location -> { if (location != null) onLocationChanged(location); });        } catch (SecurityException e) {
+         } catch (SecurityException e) {
             if (!quiet)
                 Log.e(getClass().getSimpleName(), "Error while requesting last location:\n " +
                         e.toString());
